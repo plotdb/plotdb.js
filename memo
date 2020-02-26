@@ -1,0 +1,44 @@
+# Chart Spec
+
+## Via HTML
+
+```
+pdchart(data-id="")
+  data
+    | date,country,value
+    | 2019/01,taiwan,10
+  config
+```
+
+## API
+
+### PlotDB Interface
+
+ * load(id, cb(chart))
+   - or alternatively, load(id).then(function(chart) { ... }) # new
+ * chart.add(name, chart)
+ * chart.get(name)
+ * chart.list()
+
+
+### Chart Interface
+
+ * data(data, render, mapping)
+ * data({data, render, mapping}) 
+   - data: [{ ... }, ... ]
+     - each object represents a row of the data.
+     - or, [[ ... ], ] ( plain csv view )
+   - mapping: {attr: [<list-of-col-name>], ... }
+ * attach(<node/selector>)
+ * config(cfg, render, rebind)
+   - cfg: configuration object.
+   - render: boolean, re-render if true.
+   - rebind: boolean, rebind if true
+ * render()
+ * resize()
+ * rebind()
+ * parse()
+ * init()
+ * destroy()
+ * clone()
+
