@@ -5,15 +5,11 @@ mkdir -p dist
 echo "build src/* -> dist/modules/ ..."
 ./node_modules/.bin/lsc -o dist/modules/ -cb src/*.ls
 echo "bundle js files to dist/plotdb.js ... "
-cat dist/modules/main.js \
+cat dist/modules/plotdb.js \
     dist/modules/type.js \
     dist/modules/chart.js \
-    dist/modules/theme.js \
     dist/modules/data.js \
-    dist/modules/config.js \
-    dist/modules/util.js \
-    dist/modules/setting.js \
-    dist/modules/view.js > dist/plotdb.js
+    dist/modules/config.js > dist/plotdb.js
 
 echo "build src/plotdb.styl -> dist/plotdb.css"
 ./node_modules/.bin/stylus -p src/plotdb.styl > dist/plotdb.css
