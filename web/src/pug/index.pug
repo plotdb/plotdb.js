@@ -4,5 +4,20 @@ html
   head
     +css("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
     +css("/assets/lib/ldui/ldui.min.css")
+    +css("/assets/lib/plotdb/plotdb.min.css")
+    style: :stylus
+      html, body
+        width: 100%
+        height: 100%
+        margin: 0
+        padding: 0
   body
+    #chart.w-768.h-75.mx-auto.rwd
     +script("/assets/lib/ldui/ldui.min.js")
+    +script("/assets/lib/plotdb/plotdb.min.js")
+    +script("/assets/lib/plotdb/lib/d3.min.js")
+    +script("/assets/lib/plotdb/lib/plotd3.min.js")
+    script: :lsc
+      plotdb.load \/assets/charts/pie-bubble.json, (chart) ->
+        chart.attach \#chart
+

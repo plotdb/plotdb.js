@@ -12,6 +12,7 @@ cat dist/modules/main.js \
     dist/modules/data.js \
     dist/modules/config.js \
     dist/modules/util.js \
+    dist/modules/setting.js \
     dist/modules/view.js > dist/plotdb.js
 
 echo "build src/plotdb.styl -> dist/plotdb.css"
