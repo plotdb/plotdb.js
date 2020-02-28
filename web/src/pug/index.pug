@@ -19,5 +19,9 @@ html
     +script("/assets/lib/plotdb/lib/plotd3.min.js")
     script: :lsc
       plotdb.load \/assets/charts/pie-bubble.json, (chart) ->
-        chart.attach \#chart
+        #chart.attach \#chart
+        c = new chart!
+        c.init!
+        c.attach \#chart
+        c.refresh!
 
